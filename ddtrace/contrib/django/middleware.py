@@ -140,8 +140,9 @@ def _set_auth_tags(span, request):
     if uid:
         span.set_tag('django.user.id', uid)
 
-    uname = getattr(user, 'username', None)
-    if uname:
-        span.set_tag('django.user.name', uname)
+    # NO PHI
+    # uname = getattr(user, 'username', None)
+    # if uname:
+    #     span.set_tag('django.user.name', uname)
 
     return span
